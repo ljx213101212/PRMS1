@@ -14,6 +14,8 @@ import java.util.logging.Logger;
 import sg.edu.nus.iss.phoenix.authenticate.dao.UserDao;
 import sg.edu.nus.iss.phoenix.authenticate.entity.Role;
 import sg.edu.nus.iss.phoenix.authenticate.entity.User;
+import sg.edu.nus.iss.phoenix.core.dao.DBConstants;
+import sg.edu.nus.iss.phoenix.core.dao.EntityConstants;
 import sg.edu.nus.iss.phoenix.core.exceptions.NotFoundException;
 
 /**
@@ -73,7 +75,7 @@ public class UserDaoImpl implements UserDao {
 
 		String sql = "SELECT * FROM user WHERE (id = ? ) ";
 		PreparedStatement stmt = null;
-
+               
 		try {
 			stmt = this.connection.prepareStatement(sql);
 			stmt.setString(1, valueObject.getId());
@@ -374,10 +376,10 @@ public class UserDaoImpl implements UserDao {
 
 			if (result.next()) {
 
-				valueObject.setId(result.getString("id"));
-				valueObject.setPassword(result.getString("password"));
-				valueObject.setName(result.getString("name"));
-				valueObject.setRoles(createRoles(result.getString("role")));
+				valueObject.setId(result.getString(EntityConstants.USER_ID));
+				valueObject.setPassword(result.getString(EntityConstants.USER_PASSWORD));
+				valueObject.setName(result.getString(EntityConstants.USER_NAME));
+				valueObject.setRoles(createRoles(result.getString(EntityConstants.USER_ROLE)));
 				//Role e = new Role(result.getString("role"));
 				//ArrayList<Role> roles = new ArrayList<Role>();
 				//roles.add(e);
@@ -417,10 +419,10 @@ public class UserDaoImpl implements UserDao {
 			while (result.next()) {
 				User temp = createValueObject();
 
-				temp.setId(result.getString("id"));
-				temp.setPassword(result.getString("password"));
-				temp.setName(result.getString("name"));
-				temp.setRoles(createRoles(result.getString("role")));
+				temp.setId(result.getString(EntityConstants.USER_ID));
+				temp.setPassword(result.getString(EntityConstants.USER_PASSWORD));
+				temp.setName(result.getString(EntityConstants.USER_NAME));
+				temp.setRoles(createRoles(EntityConstants.USER_ROLE));
 				//Role e = new Role(result.getString("role"));
 				//ArrayList<Role> roles = new ArrayList<Role>();
 				//roles.add(e);
@@ -451,7 +453,7 @@ public class UserDaoImpl implements UserDao {
 	private Connection openConnection() {
 		Connection conn = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName(DBConstants.COM_MYSQL_JDBC_DRIVER);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -459,8 +461,8 @@ public class UserDaoImpl implements UserDao {
 
 		try {
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/phoenix", "root",
-					"root");
+					DBConstants.dbUrl,
+					DBConstants.dbUserName, DBConstants.dbPassword);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

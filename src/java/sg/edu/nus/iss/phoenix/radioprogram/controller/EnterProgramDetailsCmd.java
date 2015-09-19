@@ -9,6 +9,9 @@ import at.nocturne.api.Action;
 import at.nocturne.api.Perform;
 import java.io.IOException;
 import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,6 +28,7 @@ import sg.edu.nus.iss.phoenix.radioprogram.entity.RadioProgram;
  */
 @Action("enterrp")
 public class EnterProgramDetailsCmd implements Perform {
+
     @Override
     public String perform(String path, HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         ProgramDelegate del = new ProgramDelegate();
@@ -33,20 +37,54 @@ public class EnterProgramDetailsCmd implements Perform {
         rp.setDescription(req.getParameter("description"));
         String dur = req.getParameter("typicalDuration");
         System.out.println(rp.toString());
-        Time t = Time.valueOf(dur);
+
+        Time t;
+        if (isTimeValid(dur)) {
+            t = strToTime(dur);
+        }else{
+            return "/pages/error.jsp";
+        }
         rp.setTypicalDuration(t);
         String ins = (String) req.getParameter("ins");
         Logger.getLogger(getClass().getName()).log(Level.INFO,
-                        "Insert Flag: " + ins);
+                "Insert Flag: " + ins);
         if (ins.equalsIgnoreCase("true")) {
-                del.processCreate(rp);
+            del.processCreate(rp);
         } else {
-                del.processModify(rp);
+            del.processModify(rp);
         }
-        
+
         ReviewSelectProgramDelegate rsdel = new ReviewSelectProgramDelegate();
         List<RadioProgram> data = rsdel.reviewSelectRadioProgram();
         req.setAttribute("rps", data);
         return "/pages/crudrp.jsp";
+    }
+
+    public boolean isTimeValid(String dur) {
+
+        Time result;
+        try {
+            result = Time.valueOf(dur);
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    public Time strToTime(String dur){
+        
+        Time result = null;
+        Date result2 = null;
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        long ms;
+        try {
+            ms = sdf.parse(dur).getTime();
+            result = new Time(ms);
+            result2 = sdf.parse(dur);
+        } catch (ParseException ex) {
+            Logger.getLogger(EnterProgramDetailsCmd.class.getName()).log(Level.SEVERE, null, ex);
+        }    
+        return result;
     }
 }

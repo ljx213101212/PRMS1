@@ -147,7 +147,7 @@ public class RadioProgram implements Cloneable, Serializable {
         if (this.description != null)
              cloned.setDescription(new String(this.description)); 
         if (this.typicalDuration != null)
-             cloned.setTypicalDuration((Time)this.typicalDuration.clone()); 
+             cloned.setTypicalDuration((Time)this.typicalDuration); 
         return cloned;
     }
 

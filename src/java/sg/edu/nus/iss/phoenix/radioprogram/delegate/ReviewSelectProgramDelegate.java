@@ -14,5 +14,9 @@ public class ReviewSelectProgramDelegate {
 	public List<RadioProgram> reviewSelectRadioProgram() {
 		return service.reviewSelectRadioProgram();	
 	}
+        
+        public List<RadioProgram> searchRadioPrgramDelegate(RadioProgram radioProgram){
+               return service.searchRadioProgram(radioProgram);
+        }
 
 }

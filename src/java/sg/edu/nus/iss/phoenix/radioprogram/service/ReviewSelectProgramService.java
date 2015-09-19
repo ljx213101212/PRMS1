@@ -29,5 +29,17 @@ public class ReviewSelectProgramService {
             }
             return data; 
 	}
+        
+        public List<RadioProgram> searchRadioProgram(RadioProgram valueObject) {
+            List<RadioProgram> data = null;
+            try{
+                data = rpdao.searchMatching(valueObject);
+            }catch (SQLException ex){
+                     Logger.getLogger(ReviewSelectProgramService.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            return data;
+            
+        }
 
 }
