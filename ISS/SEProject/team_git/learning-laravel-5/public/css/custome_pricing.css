@@ -1,0 +1,22 @@
+.text-vertical-center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.img-vertical-center{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pricing-body-basic-container{
+    background-color: #F3F3F5;
+}
+
+.pricing-body-premium-container{
+    background-color: #F3F3F5;
+}
+
+.pricing-body-try-button{
+    text-align: center;
+    vertical-align: middle;
+}

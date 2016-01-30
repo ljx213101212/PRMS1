@@ -1,0 +1,222 @@
+/*.main-text*/
+/*{*/
+    /*display: table-cell;*/
+    /*height: 20%;*/
+    /*position: absolute;*/
+    /*left: 25%;*/
+    /*bottom: 5%;*/
+    /*width: 51%;*/
+    /*color: #FFF;*/
+    /*background-color: white;*/
+    /*text-align: center;*/
+    /*vertical-align: middle;*/
+/*}*/
+
+/*.main-text-wrapper{*/
+
+    /*display: inline-block;*/
+    /*height: 90%;*/
+    /*width: 97.5%;*/
+    /*margin-top: 1.25%;*/
+    /*border: solid #F9C8BB;*/
+    /*border-width: 1px;*/
+    /*color: #F48B87;*/
+
+/*}*/
+
+.main-text-wrapper h1{
+    font-family: 'Great Vibes', fantasy;
+    font-size: 350%;
+    font-weight: lighter;
+
+}
+
+.btn-min-block
+{
+    min-width: 170px;
+    line-height: 26px;
+}
+.btn-clear
+{
+    color: #FFF;
+    background-color: transparent;
+    border-color: #FFF;
+    margin-right: 15px;
+}
+.btn-clear:hover
+{
+    color: #000;
+    background-color: #FFF;
+}
+
+.main-main-learn-div{
+    margin-top: 10px;
+}
+
+.main-main-learn-div-top{
+
+    width:100%;
+    margin-top: 70px;
+}
+
+.main-main-learn-div-bottom{
+
+    text-align: center;
+    margin-top: 50px;
+}
+
+.main-main-lookbook-div{
+
+    margin-top: 50px;
+    display: table;
+    background-color: #FAE8DE;
+}
+
+.main-main-love_story-div{
+
+    width:80%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+#main-main-try_for_free-div {
+    padding-right: 15px;
+    padding-left: 15px;
+    background-image: url("../img/main_page_try_it_for_free.png");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+
+
+
+@media (max-width: 768px) {
+    #main-main-try_for_free-div {
+        background-image: none;
+    }
+}
+
+.main-main-keep_in_touch-div{
+    border-top: 1px solid #eee;
+    margin-top: 3%;
+    padding-top: 2%;
+}
+
+.main-main-footer-div{
+    background-color:#DAD9D7;
+
+}
+.margin-center-inner-photo{
+    position: absolute;
+    top: 50px;
+}
+
+.margin-center-photo-6{
+    margin-top: 20%;
+    margin-bottom: 20%;
+    margin-right: 40%;
+    margin-left: -10%;
+}
+
+.look-book-info{
+    width: 90%;
+    height: 200px;
+    display: block;
+    height: 100%;
+}
+
+.look-book-photo{
+    float: left;
+}
+
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.btn-social-icon.btn-lg{
+    height: 45px;
+    width: 45px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1%;
+}
+
+.text-keep-in-touch{
+    text-align: center;
+    margin-top: 1%;
+}
+
+.btn-wedding-black-40{
+    width: 40%;
+}
+
+.form-group {
+    padding-bottom: 7px;
+    margin: 1% 1% 0 1%;
+}
+
+@media (min-width: 1300px) {
+    .main-text {
+        display: table-cell;
+        height: 20%;
+        position: absolute;
+        left: 25%;
+        bottom: 5%;
+        width: 51%;
+        color: #FFF;
+        background-color: white;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .main-text-wrapper{
+
+        display: inline-block;
+        height: 90%;
+        width: 97.5%;
+        margin-top: 1.25%;
+        border: solid #F9C8BB;
+        border-width: 1px;
+        color: #F48B87;
+
+    }
+}
+
+
+.photo-wrapper{
+    display: block;
+    text-align: center;
+}
+
+.photo{
+    display: inline-block;
+}
+
+.main-main-learn-div-top-photo-title>h1{
+    color: #DEB974;
+    font-family: Lato;
+}
+
+.margin-center-inner-photo-btn{
+    position:absolute;
+    margin-left:-30%;
+    left:50%;
+    width:60%;
+    margin-top:-25px;
+    top:50%;
+    height:50px;
+    border: solid 1px;
+    border-color: #eee;
+}
+
+.margin-center-inner-photo-btn button{
+    width:100%;
+}
+
+.font-wedding-GreatVibe-250{
+    text-align: center;
+}

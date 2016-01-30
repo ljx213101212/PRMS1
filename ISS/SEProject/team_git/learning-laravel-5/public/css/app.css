@@ -1,0 +1,83 @@
+body{
+    font-family: Lato;
+    background-color: white;
+    padding-top: 70px;
+
+}
+
+.btn-wedding{
+    padding: 10px 19px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+    border: none;
+    -webkit-transition: border .25s linear,color .25s linear,background-color .25s linear;
+    transition: border .25s linear,color .25s linear,background-color .25s linear;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.btn-wedding-pink{
+    line-height: 1.471;
+    color: #fff;
+    background-color: #F48B87;
+}
+
+.btn-wedding-pink-transparent{
+    opacity: 0.7;
+}
+
+.btn-wedding-black{
+
+    line-height: 1.471;
+    color: #fff;
+    background-color: #2C2C2C;
+}
+
+/*input*/
+.input-wedding{
+    display: block;
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #565a5c;
+}
+
+
+/*font*/
+.font-wedding-GreatVibe h2{
+    color: #F48B87;
+    font-family: 'Great Vibes', fantasy;
+
+}
+
+.font-wedding-GreatVibe-250 h2{
+    font-size: 250%;
+    font-weight: 100;
+}
+
+
+/*white and pink rectangle*/
+.div-wedding-rectangle-pink{
+    display: block;
+    height: 20%;
+    /* position: absolute; */
+    /* left: 25%; */
+    /* bottom: 5%; */
+    width: 100%;
+    color: #FFF;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.div-wedding-rectangle-pink-inner{
+    display: inline-block;
+    height: 90%;
+    width: 95%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: solid #F9C8BB;
+    border-width: 1px;
+    color: #F48B87;
+
+}
